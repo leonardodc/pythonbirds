@@ -17,6 +17,12 @@ if __name__ == '__main__':
     print(carlos.idade)
     for filho in carlos.filhos:
         print(f'filhos do for: {filho.nome}')
-
+    
+    # Adicionando um atributo dinamico no objeto de carlos. 
+    # Não influencia no objeto leo
+    carlos.sobrenome = 'Silva'
+    del carlos.filhos # possivel remover um atributo
+    print(carlos.__dict__)
+    print(leo.__dict__)
 
 
