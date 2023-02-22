@@ -130,21 +130,22 @@ class Motor:
     self.velocidade -= 2
     self.velocidade = max(0, self.velocidade)
 
-NORTE = 'Norte'
-SUL = 'Sul'
-LESTE = 'Leste'
-OESTE = 'Oeste'
+direcoes = ['Norte', 'Leste', 'Sul', 'Oeste']
 
 class Direcao:
-  gira_a_direita_dct = {NORTE : LESTE, LESTE : SUL, SUL: OESTE, OESTE : NORTE}
-  gira_a_esquerda_dct = {NORTE : OESTE, OESTE : SUL, SUL: LESTE, LESTE : NORTE}
-
   def __init__(self):
-    self.valor = NORTE
-
+    self.valor = 'Norte'
+  
   def girar_a_direita(self):
-    self.valor = self.gira_a_direita_dct[self.valor]
+    index = direcoes.index(self.valor)
+    if index == len(direcoes) - 1:
+      self.valor = direcoes[0]
+    else:
+      self.valor = direcoes[index + 1]
 
   def girar_a_esquerda(self):
-    self.valor = self.gira_a_esquerda_dct[self.valor]
-    
+    index = direcoes.index(self.valor)
+    if index == 0:
+      self.valor = direcoes[len(direcoes) - 1]
+    else:
+      self.valor = direcoes[index - 1]

@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
-from os import path
+import os
 import sys
 
-project_dir = path.dirname(__file__)
-project_dir = path.join('..')
+project_dir = os.path.join(os.path.dirname(__file__), '..')
+project_dir = os.path.normpath(project_dir)
 sys.path.append(project_dir)
 
 import unittest
 from unittest.case import TestCase
 from atores import Ator, DESTRUIDO, ATIVO, Obstaculo, Porco, PassaroAmarelo, PassaroVermelho
-
 
 class AtorTestes(TestCase):
     def teste_valores_padrao(self):

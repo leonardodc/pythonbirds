@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
-from itertools import chain
 
+from itertools import chain
 import os
-from os import path
+import sys
 from unittest.case import TestCase
 import math
-import sys
-
-project_dir = path.dirname(__file__)
-project_dir = path.join('..')
-sys.path.append(project_dir)
 from placa_grafica_tkinter import rodar_fase
 
 project_dir = os.path.join(os.path.dirname(__file__), '..')
